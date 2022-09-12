@@ -68,41 +68,41 @@ class ChessPanel extends JPanel implements ActionListener{
 
     public void setBoardArray(){
         board[0][0] = 'R';
-        piecesCoordsArrayX[0] = 0;
-        piecesCoordsArrayY[0] = 0;
+        // piecesCoordsArrayX[0] = 0;
+        // piecesCoordsArrayY[0] = 0;
 
         board[0][7] = 'R';
-        piecesCoordsArrayX[7] = 0;
-        piecesCoordsArrayY[7] = 7;
+        // piecesCoordsArrayX[7] = 0;
+        // piecesCoordsArrayY[7] = 7;
 
         board[0][1] = 'N';
-        piecesCoordsArrayX[1] = 0;
-        piecesCoordsArrayY[1] = 1;
+        // piecesCoordsArrayX[1] = 0;
+        // piecesCoordsArrayY[1] = 1;
 
         board[0][6] = 'N';
-        piecesCoordsArrayX[6] = 0;
-        piecesCoordsArrayY[6] = 6;
+        // piecesCoordsArrayX[6] = 0;
+        // piecesCoordsArrayY[6] = 6;
 
         board[0][2] = 'B';
-        piecesCoordsArrayX[2] = 0;
-        piecesCoordsArrayY[2] = 2;
+        // piecesCoordsArrayX[2] = 0;
+        // piecesCoordsArrayY[2] = 2;
 
         board[0][5] = 'B';
-        piecesCoordsArrayX[5] = 0;
-        piecesCoordsArrayY[5] = 5;
+        // piecesCoordsArrayX[5] = 0;
+        // piecesCoordsArrayY[5] = 5;
 
         board[0][3] = 'Q';
-        piecesCoordsArrayX[3] = 0;
-        piecesCoordsArrayY[3] = 3;
+        // piecesCoordsArrayX[3] = 0;
+        // piecesCoordsArrayY[3] = 3;
 
         board[0][4] = 'K';
-        piecesCoordsArrayX[4] = 0;
-        piecesCoordsArrayY[4] = 4;
+        // piecesCoordsArrayX[4] = 0;
+        // piecesCoordsArrayY[4] = 4;
 
         for (int i = 0 ; i < 8 ; i++){
             board[1][i] = 'P';
-            piecesCoordsArrayX[8 + i] = 1;
-            piecesCoordsArrayY[8 + i] = i;
+            // piecesCoordsArrayX[8 + i] = 1;
+            // piecesCoordsArrayY[8 + i] = i;
         }
 
         board[7][0] = 'r';
@@ -117,34 +117,34 @@ class ChessPanel extends JPanel implements ActionListener{
         board[7][3] = 'q';
         board[7][4] = 'k';
 
-        piecesCoordsArrayX[0 + 24] = 7;
-        piecesCoordsArrayY[0 + 24] = 0;
+        // piecesCoordsArrayX[0 + 24] = 7;
+        // piecesCoordsArrayY[0 + 24] = 0;
 
-        piecesCoordsArrayX[7 + 24] = 7;
-        piecesCoordsArrayY[7 + 24] = 7;
+        // piecesCoordsArrayX[7 + 24] = 7;
+        // piecesCoordsArrayY[7 + 24] = 7;
 
-        piecesCoordsArrayX[1 + 24] = 7;
-        piecesCoordsArrayY[1 + 24] = 1;
+        // piecesCoordsArrayX[1 + 24] = 7;
+        // piecesCoordsArrayY[1 + 24] = 1;
 
-        piecesCoordsArrayX[6 + 24] = 7;
-        piecesCoordsArrayY[6 + 24] = 6;
+        // piecesCoordsArrayX[6 + 24] = 7;
+        // piecesCoordsArrayY[6 + 24] = 6;
 
-        piecesCoordsArrayX[2 + 24] = 7;
-        piecesCoordsArrayY[2 + 24] = 2;
+        // piecesCoordsArrayX[2 + 24] = 7;
+        // piecesCoordsArrayY[2 + 24] = 2;
 
-        piecesCoordsArrayX[5 + 24] = 7;
-        piecesCoordsArrayY[5 + 24] = 5;
+        // piecesCoordsArrayX[5 + 24] = 7;
+        // piecesCoordsArrayY[5 + 24] = 5;
 
-        piecesCoordsArrayX[3 + 24] = 7;
-        piecesCoordsArrayY[3 + 24] = 3;
+        // piecesCoordsArrayX[3 + 24] = 7;
+        // piecesCoordsArrayY[3 + 24] = 3;
 
-        piecesCoordsArrayX[4 + 24] = 7;
-        piecesCoordsArrayY[4 + 24] = 4;
+        // piecesCoordsArrayX[4 + 24] = 7;
+        // piecesCoordsArrayY[4 + 24] = 4;
 
         for (int i = 0 ; i < 8 ; i++){
             board[6][i] = 'p';
-            piecesCoordsArrayX[16 + i] = 6;
-            piecesCoordsArrayY[16 + i] = i;
+            // piecesCoordsArrayX[16 + i] = 6;
+            // piecesCoordsArrayY[16 + i] = i;
         }
     }
 
@@ -178,16 +178,12 @@ class ChessPanel extends JPanel implements ActionListener{
 
     public void checkClick(int x, int y){
 
-        //System.out.println(x % (boardWidth/8));
         int xIndex = (x - (x % (boardWidth/8)))/(boardWidth/8);
         int yIndex = (y - (y % (boardHeight/8)))/(boardHeight/8);
-        // System.out.println(x + "," + xIndex + "," + (x%(boardWidth/8)) + "   " + y + "," + yIndex + "," + (y%(boardHeight/8)));
 
         // If the tile is taken, and you ARE NOT moving something currently
         // Else if the tile is open, and you ARE moving something currently
 
-        // System.out.println(openTile(snapCoordsX(x), snapCoordsY(y), pieceInMovement()));
-        // System.out.println(movementActive);
         if (!openTile(snapCoordsX(x), snapCoordsY(y), pieceInMovement()) && !movementActive){
             // Select the piece and move it
            
@@ -220,11 +216,46 @@ class ChessPanel extends JPanel implements ActionListener{
 
                     piecesMovement[i] = false;
                     movementActive = false;
+
+                    
+
                     piecesCoords[i][0] = snapCoordsX(piecesCoords[i][0]);
                     piecesCoords[i][1] = snapCoordsY(piecesCoords[i][1]);
 
                     board[coordsToIndex(boardWidth, piecesCoords[i][1])][coordsToIndex(boardWidth, piecesCoords[i][0])] = pieceFromIndex(i);
                     //logMove();
+                }
+            }
+        }
+        else if (!openTile(snapCoordsX(x), snapCoordsY(y), pieceInMovement()) && movementActive){ // Taking a piece
+
+            System.out.println("INSIDE");
+            for (int i = 0 ; i < 32 ; i++){
+
+                if ( (snapCoordsX(piecesCoords[i][0]) == snapCoordsX(x)) && (snapCoordsY(piecesCoords[i][1]) == snapCoordsY(y)) ){
+
+                    if (!validMove(xSelectCoord, ySelectCoord, coordsToIndex(boardWidth, piecesCoords[i][1]), coordsToIndex(boardWidth, piecesCoords[i][0]), selectedPiece)){
+                        break;
+                    }
+
+                    board[coordsToIndex(boardWidth, piecesCoords[i][1])][coordsToIndex(boardWidth, piecesCoords[i][0])] = selectedPiece;
+
+                    selectedPiece = pieceFromIndex(pieceInMovement());
+
+                    piecesCoords[pieceInMovement()][0] = -20;
+                    piecesCoords[pieceInMovement()][1] = -20;
+                    // System.out.println("=================== " + selectedPiece);
+                    // xSelectCoord = coordsToIndex(boardWidth, piecesCoords[i][1]);
+                    // ySelectCoord = coordsToIndex(boardWidth, piecesCoords[i][0]);
+                    
+                    //piecesCoords[coordsToIndex(boardWidth, piecesCoords[i][1]]
+
+                    piecesMovement[i] = false;
+                    movementActive = false;
+                    piecesCoords[i][0] = snapCoordsX(piecesCoords[i][0]);
+                    piecesCoords[i][1] = snapCoordsY(piecesCoords[i][1]);
+
+                    //board[coordsToIndex(boardWidth, piecesCoords[i][1])][coordsToIndex(boardWidth, piecesCoords[i][0])] = pieceFromIndex(i);
                 }
             }
         }
@@ -287,6 +318,7 @@ class ChessPanel extends JPanel implements ActionListener{
             return false;
         }
 
+        System.out.println("pieceType: " + pieceType);
         if (pieceType == 'p' || pieceType == 'P'){
             return pawnCheck(xDisplacement, yDisplacement, xMoveIndex, yMoveIndex, pieceType);
         }
@@ -298,8 +330,10 @@ class ChessPanel extends JPanel implements ActionListener{
     public boolean pawnCheck(int xDisplacement, int yDisplacement, int xMoveIndex, int yMoveIndex, char pieceType){
         // Piece checks
         if (pieceType == 'p'){
+            System.out.println("BOARD INFO: " + board[xMoveIndex][yMoveIndex]);
+            System.out.println("move info: " + xDisplacement + " " + yDisplacement);
             if (xMoveIndex + xDisplacement == 6){
-                if (xDisplacement <= 2 && xDisplacement >= 1 && yDisplacement == 0){
+                if (xDisplacement <= 2 && xDisplacement >= 0 && yDisplacement == 0){
 
                     if (board[xMoveIndex][yMoveIndex] == '.'){
                         System.out.println("TRUE");
@@ -314,9 +348,13 @@ class ChessPanel extends JPanel implements ActionListener{
                     return false;
                 }
             }
-            else if (xDisplacement == 1 && yDisplacement == 0){
+            else if ((xDisplacement == 1 || xDisplacement == 0) && (yDisplacement == 0 || yDisplacement == -1)){
 
-                if (board[xMoveIndex][yMoveIndex] == '.'){
+                if ((yDisplacement == -1) && (xDisplacement == 1) && (board[xMoveIndex][yMoveIndex] != '.')){
+                    System.out.println("TRUE" + " " + board[xMoveIndex][yMoveIndex]);
+                    return true;
+                }
+                else if ((board[xMoveIndex][yMoveIndex] == '.') && (yDisplacement == 0)){
                     System.out.println("TRUE");
                     return true;
                 }
@@ -331,7 +369,7 @@ class ChessPanel extends JPanel implements ActionListener{
         }
         else if (pieceType == 'P'){
             if (xMoveIndex + xDisplacement == 1){
-                if (xDisplacement >= -2 && xDisplacement <= -1 && yDisplacement == 0){
+                if (xDisplacement >= -2 && xDisplacement <= 0 && yDisplacement == 0){
 
                     if (board[xMoveIndex][yMoveIndex] == '.'){
                         System.out.println("TRUE");
@@ -346,7 +384,7 @@ class ChessPanel extends JPanel implements ActionListener{
                     return false;
                 }
             }
-            else if (xDisplacement == -1 && yDisplacement == 0){
+            else if ((xDisplacement == -1 || xDisplacement == 0) && yDisplacement == 0){
 
                 if (board[xMoveIndex][yMoveIndex] == '.'){
                     System.out.println("TRUE");
